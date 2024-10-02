@@ -6,7 +6,7 @@ function generaNumero(min = 1, max = 100) {
 }
 
 function sanitize(numero) {
-    const sanificate = parseInt(numero.trim()); 
+    let sanificate = parseInt(numero.trim()); 
     if (isNaN(sanificate)) {
         console.log("Errore");
         
