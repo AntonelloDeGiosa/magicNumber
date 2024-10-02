@@ -17,7 +17,7 @@ function sanitize(numero) {
 
 let tentativi = 5;
 let indovinato = false;
-const n = generaNumero(); // Numero da indovinare
+let n = generaNumero(); // Numero da indovinare
 let nInserito;
 
 alert("BENVENUTO, INDOVINA IL NUMERO!!!");
