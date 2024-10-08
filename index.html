@@ -12,12 +12,6 @@
     </style>
 </head>
 <body>
-    <script type="text/javascript">
-        
-    </script>
-    <script type="text/javascript" src="static/js/script.js">
-
-    </script>
     <header>
         <h1>Indovina il numero</h1>
     </header>
@@ -75,6 +69,48 @@
                 - controllo sul numero tentativi
 
         */
+        function sanitize(numero) {
+    let sanificate = parseInt(numero.trim()); 
+    if (isNaN(sanificate)) {
+        console.log("Errore");
+        
+    } else {
+        return sanificate;
+    }
+}
+        let btn = document.querySelector("#guessBtn")
+        function handleClick(event){ 
+                console.log(event)
+                let tentativi = 5;
+                let indovinato = false;
+                let nInserito;
+
+                while (tentativi > 0 && !indovinato) {
+                    console.log("Tentativi rimasti: " + tentativi);
+
+                    let insnum = prompt("Inserisci numero"); // Chiedi input all'utente
+                    nInserito = sanitize(insnum);
+
+                    if (isNaN(nInserito)) {
+                        console.log("Numero non valido ")
+                        indovinato=false
+                    }else if (nInserito > computer) {
+                        console.log("Il numero '" + nInserito + "' è troppo grande");
+                        tentativi -= 1; // Riduci il numero di tentativi a ogni tentativo valido
+                    } else if (nInserito < computer) {
+                        console.log("Il numero '" + nInserito + "' è troppo piccolo");
+                        tentativi -= 1; // Riduci il numero di tentativi a ogni tentativo valido
+                    } else if (nInserito === computer) {
+                        console.log("Bravo, hai vinto!");
+                        indovinato = true;
+                    }
+
+                    
+                            }
+                        }
+                if (!indovinato) {
+                console.log("Mi dispiace, hai perso. Il numero era " + n);
+}
     </script>
 </body>
 </html>
