@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        #gues{
+            width: 350px;
+            background-color: pink;
+        }
+    </style>
 </head>
 <body>
     <script type="text/javascript">
@@ -11,6 +17,59 @@
     </script>
     <script type="text/javascript" src="static/js/script.js">
 
+    </script>
+    <header>
+        <h1>Indovina il numero</h1>
+    </header>
+
+    <div class="rules">
+        <p>
+            Devi indovinare il numero magico. Inserisci un numero e poi clicca indovina:
+        </p>
+    </div>
+    <div>
+        <form action="" method="get">
+            <input type="number" name="guess" id="guess">
+            <input type="button" name="btn" id="guessBtn" value="indovina">
+        </form>
+    </div>
+    <script>
+        function generateRandomIntegrer(min=0, max=100){
+            let number= Math.random()
+            number = number*(max-min)+min
+            return Math.floor(number)
+        }
+
+        let computer= generateRandomIntegrer(100,200)
+        /*come accedere a n elemento in jscript.  
+            accedo a un elemento in jscript tramite il metodo queryselector
+            che fa parte dell'oggetto document
+            
+            
+            queryselector è un metodo (funzione) dell'oggetto document 
+            a cui voglio accedere come stringa
+            restituisce l'elemento del DOM "matchato" dal selettore
+            possiamo assegnare una varaibile
+
+            quaryselector mi restituisce un elemento di tipo Element
+            (un elemento HTML), nel caso degli elementi <input> 
+            posso accedere agli attributi dal campo utillizando il punto 
+            es
+            let userField document.querySelector("#guess")
+            console.log(userField.value) logga in console il contenuto
+
+        per gestire l'evento che poi andrà asìd aviare i controlli sul numero 
+        inserito dall'utente ho bisogno di 3 cose:
+            1->l'elemento che scatenerà (il button nel nostro caso)
+            2->il nome dell'evento
+            3->le cose da fare dopo che l'evento è stato scatenato
+
+            1->è il button -> uso querySelector per accedere all'elemento
+            2l'evento scatenerà il flusso di gioco è il click
+            3->sanitize,if/else per il controllo dei numeri e console.log 
+            \
+            per gestire un evento su un elemento html posso usare una funzione che si chiama addEventListener
+        */
     </script>
 </body>
 </html>
