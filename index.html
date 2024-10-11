@@ -27,90 +27,9 @@
             <input type="button" name="btn" id="guessBtn" value="indovina">
         </form>
     </div>
-    <script>
-        function generateRandomIntegrer(min=0, max=100){
-            let number= Math.random()
-            number = number*(max-min)+min
-            return Math.floor(number)
-        }
-
-        let computer= generateRandomIntegrer(100,200)
-        /*Per gestire l'evento che poi andrà ad avviare i controlli sul numero
-            inserito dall'utente ho bisogno di 3 cose
-            1 - l'elemento che scatenerà l'evento (il button nel nostro caso)
-            2 - il nome dell'evento 
-            3 - le cose da fare dopo che l'evento è stato scatenato
-
-            1 -> è il button -> uso querySelector per accedere all'elemento
-            2 -> l'evento che scatenerà il flusso di gioco è il click
-            3 -> sanitize, if/else per controllo numero e console.log
-
-            per gestire un evento su un elemento HTML posso usare una funzione
-            che si chiama addEventListener
-
-            let btn = document.querySelector("#guessBtn") -> elemento al punto 1
-
-            function handleClick(event){ -> DEVE avere come argomento un oggetto event 
-                console.log(event)
-            }  -> cose da fare (punto 3)
-
-            btn.addEventListener("click", handleClick)
-
-            addEventListener è un metodo (funzione) dell'elemento HTML al punto 1
-                parametri: 
-                    - il nome dell'evento come stringa
-                    - la funzione da eseguire al verificarsi dell'evento (DEVE avere come argomento un oggetto event)
-
-            nella funzione handleClick avrò tutti i controlli del gioco:
-                - prendo il valore inserito dall'utente 
-                - sanitize dell'input
-                - parseInt dell'input
-                - if/else con console.log
-                - controllo sul numero tentativi
-
-        */
-        function sanitize(numero) {
-    let sanificate = parseInt(numero.trim()); 
-    if (isNaN(sanificate)) {
-        console.log("Errore");
-        
-    } else {
-        return sanificate;
-    }
-}
-        let btn = document.querySelector("#guessBtn")
-        function handleClick(event){ 
-                console.log(event)
-                let tentativi = 5;
-                let indovinato = false;
-                let nInserito;
-
-                while (tentativi > 0 && !indovinato) {
-                    console.log("Tentativi rimasti: " + tentativi);
-
-                    let insnum = prompt("Inserisci numero"); // Chiedi input all'utente
-                    nInserito = sanitize(insnum);
-
-                    if (isNaN(nInserito)) {
-                        console.log("Numero non valido ")
-                        indovinato=false
-                    }else if (nInserito > computer) {
-                        console.log("Il numero '" + nInserito + "' è troppo grande");
-                        tentativi -= 1; // Riduci il numero di tentativi a ogni tentativo valido
-                    } else if (nInserito < computer) {
-                        console.log("Il numero '" + nInserito + "' è troppo piccolo");
-                        tentativi -= 1; // Riduci il numero di tentativi a ogni tentativo valido
-                    } else if (nInserito === computer) {
-                        console.log("Bravo, hai vinto!");
-                        indovinato = true;
-                    }
+   
+    <script type="text/javascript" src="static/js/script.js"></script>
 
                     
-                            }
-                        }
-                if (!indovinato) {
-                console.log("Mi dispiace, hai perso. Il numero era " + n);
-}
-    </script>
 </body>
 </html>
