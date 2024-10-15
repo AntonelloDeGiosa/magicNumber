@@ -1,16 +1,58 @@
+@import url(font.css);
+
 .hero{
     display:flex;
+    min-width: 100vh;
+    width: 100vw;
     justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    align-items: center;    
+    
+    
+    
     height: 100vh;
-    background-color: blue;
+    background-color: #CCFFC5;
     font-family: 'Times New Roman', Times, serif;
     font-size: 50px;
-    overflow: hidden;
+   
 }
 
-h1{
-    font-size: 75px;
-    font-style: bold;
-    color: pink;
+
+
+.title h1{
+    font-size: 50px;
+    font-weight: bold;
+    margin-top: 144px;
+    align-items: center;
+    flex-direction: column;
+   
+}
+
+.rules{
+    font-size: 16px;
+    padding-top: 46px;
+}
+
+#guess{
+     
+    flex-grow: 1;
+    margin-top: 104px;
+    height: 60px;
+    width: 350px;
+    
+}
+
+#guessBtn{
+    margin-top: 18px;
+  
+    height: 60px;
+    width: 350px;
+    background-color:#3AE3A8;
+    border: 0px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 24px;
+
+
 }

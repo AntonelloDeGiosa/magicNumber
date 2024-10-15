@@ -99,4 +99,8 @@ let userField= document.querySelector("#guess")
 let btn=document.querySelector("#guessBtn")
     btn.addEventListener("click", handleClick)
 
+let mess=document.querySelector("message")
+mess.innerHTML = "Hai ancora a disposizione<strong>"+tentativi+"</strong>tentativi"
 
+//innerHTML puoidare un valore, non loc hiamo con le parentesi 
+/* elem.innerHTML = " Hai ancora a disposizione ${temtativi}tentativi"*/
