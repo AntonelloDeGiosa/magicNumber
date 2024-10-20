@@ -1,58 +1,76 @@
 @import url(font.css);
-
-.hero{
-    display:flex;
-    min-width: 100vh;
-    width: 100vw;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;    
-    
-    
-    
-    height: 100vh;
+body{
     background-color: #CCFFC5;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 50px;
-   
+}
+
+.hero{   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
 }
 
 
 
 .title h1{
-    font-size: 50px;
-    font-weight: bold;
+    margin-left: 30px;
     margin-top: 144px;
+    margin-bottom: 48px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 61px;
+    display: flex;
     align-items: center;
-    flex-direction: column;
+    color: #000000;
    
 }
 
 .rules{
+    font-family: "Inter", sans-serif;
+    font-style: normal;
+    font-weight: 400;
     font-size: 16px;
-    padding-top: 46px;
+    line-height: 19px;
+    color: #000000;
+    margin-bottom: 80px;
+    width: 548px;
+    
 }
 
 #guess{
      
-    flex-grow: 1;
-    margin-top: 104px;
-    height: 60px;
     width: 350px;
+    height: 60px;
+    background-color: white;
+    margin-bottom: 18px;
+    border-style: hidden;
+    border-radius: 5px;
+    margin-left: 99px;
     
 }
 
 #guessBtn{
-    margin-top: 18px;
-  
-    height: 60px;
     width: 350px;
-    background-color:#3AE3A8;
-    border: 0px;
+    height: 60px;
+    background: #3AE3A8;
     border-radius: 5px;
-    text-align: center;
-    font-weight: bold;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
     font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+    color: #000000;
+    border-style: hidden;
+    margin-left: 99px;
+    
 
 
+}
+
+ul ,ol{
+    margin-bottom: 0px;
 }

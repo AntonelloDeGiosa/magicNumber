@@ -69,14 +69,23 @@ function handleClick(event){
     if (isNaN(nInserito)) {
         console.log("Numero non valido ")
         indovinato=false
+        elem1.innerHTML = `Numero non valido`;
+        elem2.innerHTML = `Inserisci un numero valido.`
     }else if (nInserito > n) {
         console.log("Il numero '" + nInserito + "' è troppo grande");
-        tentativi -= 1; 
+        tentativi -= 1;
+        elem1.innerHTML = `Il numero <strong>${nInserito}</strong> è troppo grande!`;
+        elem2.innerHTML = `Hai ancora a dispozione <strong>${tentativi}</strong> tentativi.` 
     } else if (nInserito < n) {
         console.log("Il numero '" + nInserito + "' è troppo piccolo");
-        tentativi -= 1; 
+        tentativi -= 1;
+        elem1.innerHTML = `Il numero <strong>${nInserito}</strong> è troppo piccolo!`;
+        elem2.innerHTML = `Hai ancora a dispozione <strong>${tentativi}</strong> tentativi.` 
+         
     } else if (nInserito === n) {
         console.log("Bravo, hai vinto!");
+        elem1.innerHTML = `Bravo, hai vinto!`;
+        elem2.innerHTML = ""
         indovinato = true;
         document.querySelector("#guess").disables=true;
         document.querySelector("#guessBtn").disables=true;
@@ -84,6 +93,8 @@ function handleClick(event){
     }
     if (tentativi === 0 && !indovinato) {
         console.log("Mi dispiace, hai perso. Il numero era " + n);
+        elem1.innerHTML = `Mi dispiace, hai perso.`;
+        elem2.innerHTML = `Il numero era <strong>${n}</strong>.`
         document.querySelector("#guess").disabled = true;
         document.querySelector("#guessBtn").disabled = true;
     }
@@ -93,6 +104,8 @@ let tentativi = 5;
 let indovinato = false;
 let n = generaNumero(); // Numero da indovinare
 let nInserito;
+let elem1 = document.querySelector("#message1")
+let elem2 = document.querySelector("#message2")
 
 alert("BENVENUTO, INDOVINA IL NUMERO!!!");
 let userField= document.querySelector("#guess")
