@@ -1,7 +1,5 @@
 @import url(font.css);
-body{
-    background-color: #CCFFC5;
-}
+
 
 .hero{   
     display: flex;
@@ -55,7 +53,6 @@ body{
 #guessBtn{
     width: 350px;
     height: 60px;
-    background: #3AE3A8;
     border-radius: 5px;
     font-family: 'Inter';
     font-style: normal;
@@ -71,6 +68,34 @@ body{
 
 }
 
+.greenBtn{
+    background-color: #3AE3A8;
+}
+
+.yellowBtn{
+    background-color: yellow;
+}
+
+.redBtn{
+    background-color: red;
+}
+
 ul ,ol{
     margin-bottom: 0px;
+}
+
+.greenBg{
+    background-color:#CCFFC5 ;
+}
+
+.yellowBg{
+    background-color:rgba(255, 255, 5, 0.76) ;
+}
+
+.redBg{
+    background-color: rgba(255, 0, 0, 0.795);
+}
+
+.transition{
+    transition: all 4s;
 }

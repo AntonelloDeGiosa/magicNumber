@@ -97,6 +97,17 @@ function handleClick(event){
         elem2.innerHTML = `Il numero era <strong>${n}</strong>.`
         document.querySelector("#guess").disabled = true;
         document.querySelector("#guessBtn").disabled = true;
+        el.classList.remove("greenBg")
+        el.classList.add("redBg")
+        btn.classList.remove("yellowBtn")
+        btn.classList.add("redBtn")
+    }
+
+    if(tentativi<3){
+        el.classList.remove("greenBg")
+        el.classList.add("yellowBg")
+        btn.classList.remove("greenBtn")
+        btn.classList.add("yellowBtn")
     }
 }
 
@@ -106,6 +117,8 @@ let n = generaNumero(); // Numero da indovinare
 let nInserito;
 let elem1 = document.querySelector("#message1")
 let elem2 = document.querySelector("#message2")
+let el=document.querySelector("#element")
+
 
 alert("BENVENUTO, INDOVINA IL NUMERO!!!");
 let userField= document.querySelector("#guess")
